@@ -194,7 +194,6 @@ body {
 .web-project {
   width: 43.125rem;
   gap: 1.5rem;
-  contain: strict;
 }
 .web-project-img {
   display: flex;
