@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
+  margin: 0; /*rem：网页根字体*/
+  padding: 1.5rem; /*内边距 容器内元素与元素之间的距离*/
+}
+.page-container {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 2.5rem;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: medium;
+  width: 100%;
+  margin: 0; /*外边距 容器与容器之间的距离*/
+}
+.header-line-long {
+  width: 30.375rem;
+  height: 0.125rem;
+  background-color: #808080;
+  margin-top: 0.5rem;
+}
+.header-line-short {
+  width: 11.25rem;
+  height: 0.25rem;
+  background-color: black;
+  margin-top: -0.1875rem;
+}
+.bento {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.card {
+  overflow: hidden;
+  background-color: #eff7f7;
+  border-radius: 0.75rem;
+  padding: 1.5rem 1.5rem;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.row1 {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+.intro-text {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  background: linear-gradient(to right, #d4f24e, #9bedf8);
+  padding: 1.5rem 1.5rem;
+}
+.resume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24rem;
+  gap: 0.75rem;
+}
+.project-pic {
+  height: 11.25rem;
+  border-radius: 0.75rem;
+  border: 0.25rem solid #fff;
+}
+.project-pic:hover {
+  box-shadow: 8px 8px 30px -10px rgba(106, 205, 218, 0.8);
+}
+.row2 {
+  display: flex;
+  align-items: stretch;
+  height: 18.125rem;
+  gap: 1.5rem;
+}
+.app-project {
+  display: flex;
+  flex-direction: column;
+  width: 36.75rem;
+  gap: 1.5rem;
+}
+.app-project-img {
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+.funny-school {
+  z-index: 1;
+  position: relative;
+  left: 11.5rem;
+}
+.art-pixel {
+  z-index: 2;
+}
+.column2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 18.125rem;
+}
+.other-project {
+  display: flex;
+  flex-direction: column;
+  width: 17.625rem;
+  gap: 1.5rem;
+}
+.other-project-img {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.draw-pic {
+  height: 6.25rem;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+.draw2 {
+  z-index: 1;
+  position: relative;
+  left: 7.25rem;
+}
+.draw3 {
+  z-index: 2;
+}
+.nothing {
+  flex-grow: 1;
+  background-color: #d5f24f;
+}
+.social-card {
+  width: 17.625rem;
+  flex-grow: 1;
+  background-color: #9bedf8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.social-card-element {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.boundary-line {
+  width: 0.125rem;
+  height: 10rem;
+  background-color: #fff;
+  flex-shrink: 0;
+}
+.row3 {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 17.625rem;
+  gap: 1.5rem;
+}
+.cat-card {
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: #fed133;
+  display: flex;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.web-project {
+  width: 43.125rem;
+  gap: 1.5rem;
+  contain: strict;
+}
+.web-project-img {
+  display: flex;
+  justify-content: flex-start;
+}
+.gfm-pic {
+  z-index: 4;
+}
+.xhub-pic {
+  z-index: 3;
+  position: relative;
+  left: 13rem;
+}
+.random-password-pic {
+  z-index: 2;
+  position: relative;
+  left: 26rem;
+}
+.nothing2 {
+  flex-grow: 1;
+  width: 11.25rem;
+  background-color: #d5f24f;
+}
