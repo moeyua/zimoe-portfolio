@@ -63,6 +63,7 @@ body {
   flex-direction: column;
   align-items: end;
 }
+
 .row1 {
   display: flex;
   align-items: stretch;
@@ -81,14 +82,85 @@ body {
   justify-content: center;
   width: 24rem;
   gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+.resume:hover .icon-resume {
+  animation: swing 0.6s ease-in-out;
+}
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-8deg);
+  }
+  60% {
+    transform: rotate(6deg);
+  }
+  80% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.icon-resume {
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.2s ease-out;
+}
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  width: 0;
+  border-right: none;
+  position: relative;
+  animation: typing 2.5s steps(20, end) forwards;
+}
+.typewriter::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 0.125rem;
+  background-color: black;
+  animation: blink 0.7s step-end 3.3;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+@keyframes typing {
+  form {
+    width: 0;
+  }
+  to {
+    width: 20ch;
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 .project-pic {
   height: 11.25rem;
   border-radius: 0.75rem;
   border: 0.25rem solid #fff;
+  transition: transform 0.3s ease;
 }
 .project-pic:hover {
   box-shadow: 8px 8px 30px -10px rgba(106, 205, 218, 0.8);
+  transform: scale(1.05);
+  z-index: 10;
 }
 .row2 {
   display: flex;
@@ -137,13 +209,20 @@ body {
   border: 2px solid #fff;
   border-radius: 8px;
 }
+.draw3 {
+  z-index: 3;
+}
 .draw2 {
+  z-index: 2;
+  position: relative;
+  left: 8.7rem;
+}
+.other-project-more {
   z-index: 1;
   position: relative;
-  left: 7.25rem;
-}
-.draw3 {
-  z-index: 2;
+  left: 18rem;
+  width: 10.5rem;
+  background: linear-gradient(to right, #fff 0%, #9bedf8 50%, #9bedf8 100%);
 }
 .nothing {
   flex-grow: 1;
@@ -168,6 +247,13 @@ body {
   height: 10rem;
   background-color: #fff;
   flex-shrink: 0;
+}
+.social-icon {
+  filter: brightness(999%) grayscale(1);
+  transition: filter 0.5s ease;
+}
+.social-icon:hover {
+  filter: none;
 }
 .row3 {
   display: flex;
@@ -212,6 +298,15 @@ body {
   z-index: 2;
   position: relative;
   left: 26rem;
+}
+.web-project-more {
+  z-index: 1;
+  position: relative;
+  left: 43.5rem;
+  width: 19.5625rem;
+  border: 0.25rem solid #fff;
+  border-radius: 0.75rem;
+  background: linear-gradient(to right, #fff 0%, #9bedf8 50%, #9bedf8 100%);
 }
 .nothing2 {
   flex-grow: 1;
