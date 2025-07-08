@@ -17,6 +17,12 @@ body {
   margin: 0; /*rem：网页根字体*/
   padding: 1.5rem; /*内边距 容器内元素与元素之间的距离*/
 }
+.subpage-body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
 .page-container {
   width: 100%;
   max-width: 75rem;
@@ -40,12 +46,14 @@ body {
   height: 0.125rem;
   background-color: #808080;
   margin-top: 0.5rem;
+  border-radius: 1rem;
 }
 .header-line-short {
   width: 11.25rem;
   height: 0.25rem;
   background-color: black;
   margin-top: -0.1875rem;
+  border-radius: 1rem;
 }
 .bento {
   display: flex;
@@ -162,6 +170,11 @@ body {
   transform: scale(1.05);
   z-index: 10;
 }
+.img {
+  height: 10.75rem;
+  border-radius: 0.5rem;
+  /* border: 0.25rem solid #fff; */
+}
 .row2 {
   display: flex;
   align-items: stretch;
@@ -250,10 +263,10 @@ body {
 }
 .social-icon {
   filter: brightness(999%) grayscale(1);
-  transition: filter 0.5s ease;
+  transition: transform 0.4s ease;
 }
 .social-icon:hover {
-  filter: none;
+  transform: scale(1.08);
 }
 .row3 {
   display: flex;
@@ -279,6 +292,7 @@ body {
 }
 .web-project {
   width: 43.125rem;
+  height: 100%;
   gap: 1.5rem;
   contain: strict;
 }
@@ -302,8 +316,9 @@ body {
 .web-project-more {
   z-index: 1;
   position: relative;
-  left: 43.5rem;
-  width: 19.5625rem;
+  left: 44rem;
+  width: 20rem;
+  height: 11.25rem;
   border: 0.25rem solid #fff;
   border-radius: 0.75rem;
   background: linear-gradient(to right, #fff 0%, #9bedf8 50%, #9bedf8 100%);
@@ -312,4 +327,120 @@ body {
   flex-grow: 1;
   width: 11.25rem;
   background-color: #d5f24f;
+}
+.project-card {
+  cursor: pointer;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 2.5rem;
+  gap: 1rem;
+}
+.first-line {
+  width: 17.625rem;
+  height: 0.125rem;
+  background-color: #808080;
+  border-radius: 1rem;
+}
+.second-line {
+  width: 11.25rem;
+  height: 0.125rem;
+  background-color: #808080;
+  border-radius: 1rem;
+}
+.third-line {
+  width: 4.875rem;
+  height: 0.125rem;
+  background-color: #808080;
+  border-radius: 1rem;
+}
+
+/* -------------------以下是二级页面------------------- */
+.secondary-page-title {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  gap: 0.25rem;
+}
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.project-grid {
+  width: 100%;
+  column-count: 2;
+  column-gap: 1.5rem;
+}
+.secondary-page-img {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  align-self: start; /* 让它不要被拉高！ */
+  transition: all 0.3s ease;
+  img {
+    width: 100%;
+    border-radius: 0.75rem;
+  }
+}
+.secondary-page-img:hover {
+  box-shadow: 0px 0px 20px -8px rgba(0, 0, 0, 0.6);
+  border-radius: 0.75rem;
+  transform: scale(1.02);
+}
+/* 遮罩层，初始隐藏 */
+.image-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8); /* 黑色半透明 */
+  backdrop-filter: blur(10px); /* 毛玻璃效果 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none; /* 防止挡住页面 */
+  transition: opacity 0.3s ease;
+}
+.image-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* 放大显示的图片 */
+.enlarged-img {
+  width: 80vw; /* 最大宽度：视口宽度的80% */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  object-fit: contain; /* 按比例缩放填充 */
+  border-radius: 0.75rem;
+}
+/* 添加 active 时的缩放动画 */
+.image-overlay.active .enlarged-img {
+  transform: scale(1);
+}
+/* 鼠标指针提示 */
+.preview-img {
+  cursor: zoom-in;
+}
+.image-overlay {
+  cursor: zoom-out;
+}
+
+/* -------------------以下是三级页面------------------- */
+.masonry {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+.project-img {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+}
+.project-desc {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.8;
 }

@@ -1,0 +1,114 @@
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Projects</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
+  </head>
+  <body class="subpage-body">
+    <div class="page-container">
+      <header class="header">
+        <div class="secondary-page-title">
+          <canvas
+            id="canvas"
+            style="width: 26px; height: 24px; cursor: pointer"
+          ></canvas>
+          <h1 class="title">Web Project</h1>
+        </div>
+        <div class="header-line-long"></div>
+        <div class="header-line-short"></div>
+      </header>
+      <section class="project-grid">
+        <a href="project-detail.html?id=gfm" class="jump-to-project">
+          <div class="secondary-page-img">
+            <img
+              src="images/projects/gfm/GFM1.png"
+              class="preview-img"
+              alt="green finance monitor"
+            />
+          </div>
+        </a>
+        <a href="project-detail.html?id=papifeed" class="jump-to-project">
+          <div class="secondary-page-img">
+            <img
+              src="images/projects/pet/PapiFeed-1.png"
+              class="preview-img"
+              alt="pet homepage"
+            />
+          </div>
+        </a>
+        <a
+          href="project-detail.html?id=random-password"
+          class="jump-to-project"
+        >
+          <div class="secondary-page-img">
+            <img
+              src="images/projects/random-password/密码生成器1.png"
+              class="preview-img"
+              alt="random password"
+            />
+          </div>
+        </a>
+        <a href="project-detail.html?id=smart-park" class="jump-to-project">
+          <div class="secondary-page-img">
+            <img
+              src="images/projects/smart-park/园区后台管理系统-1.png"
+              class="preview-img"
+              alt="smart-park"
+            />
+          </div>
+        </a>
+        <a href="project-detail.html?id=xhub" class="jump-to-project">
+          <div class="secondary-page-img">
+            <img
+              src="images/projects/xhub/智枢1.png"
+              class="preview-img"
+              alt="xhub"
+            />
+          </div>
+        </a>
+        <a href="project-detail.html?id=3CIM" class="jump-to-project">
+          <div class="secondary-page-img">
+            <img
+              src="images/projects/3cim/国家气候中心1.png"
+              class="preview-img"
+              alt="3cim"
+            />
+          </div>
+        </a>
+        <div class="image-overlay" id="overlay">
+          <img class="enlarged-img" id="enlarged" />
+        </div>
+      </section>
+    </div>
+    <script>
+      // const images = document.querySelectorAll(".preview-img");
+      // const overlay = document.getElementById("overlay");
+      // const enlarged = document.getElementById("enlarged");
+      // images.forEach((img) => {
+      //   img.addEventListener("click", () => {
+      //     const src = img.getAttribute("src");
+      //     enlarged.setAttribute("src", src);
+      //     overlay.classList.add("active");
+      //   });
+      // });
+      // overlay.addEventListener("click", (e) => {
+      //   if (e.target === overlay) {
+      //     overlay.classList.remove("active");
+      //   }
+      // });
+    </script>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const riveInstance = new rive.Rive({
+        src: "assets/rive/return.riv",
+        canvas,
+        onLoad: () => riveInstance.resizeDrawingSurfaceToCanvas(),
+      });
+      canvas.onmouseenter = () => riveInstance.play();
+      canvas.onmouseout = () => riveInstance.reset();
+      canvas.onclick = () => window.history.back();
+    </script>
+  </body>
+</html>

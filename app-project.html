@@ -1,0 +1,75 @@
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APP Projects</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
+  </head>
+  <body class="subpage-body">
+    <div class="page-container">
+      <header class="header">
+        <div class="secondary-page-title">
+          <canvas
+            id="canvas"
+            style="width: 26px; height: 24px; cursor: pointer"
+          ></canvas>
+          <h1 class="title">App Project</h1>
+        </div>
+        <div class="header-line-long"></div>
+        <div class="header-line-short"></div>
+      </header>
+      <section class="project-grid">
+        <a href="project-detail.html?id=art-pixel" class="jump-to-project">
+          <div class="secondary-page-img">
+            <img
+              src="images/projects/art-pixel/Art Pixel-1.png"
+              class="preview-img"
+              alt="art-pixel"
+            />
+          </div>
+        </a>
+        <a href="project-detail.html?id=funny-school" class="jump-to-project">
+          <div class="secondary-page-img">
+            <img
+              src="images/projects/funny-school/乐哉校园1.png"
+              class="preview-img"
+              alt="funny-school"
+            />
+          </div>
+        </a>
+        <div class="image-overlay" id="overlay">
+          <img class="enlarged-img" id="enlarged" />
+        </div>
+      </section>
+    </div>
+    <script>
+      const images = document.querySelectorAll(".preview-img");
+      const overlay = document.getElementById("overlay");
+      const enlarged = document.getElementById("enlarged");
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          const src = img.getAttribute("src");
+          enlarged.setAttribute("src", src);
+          overlay.classList.add("active");
+        });
+      });
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove("active");
+        }
+      });
+    </script>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const riveInstance = new rive.Rive({
+        src: "assets/rive/return.riv",
+        canvas,
+        onLoad: () => riveInstance.resizeDrawingSurfaceToCanvas(),
+      });
+      canvas.onmouseenter = () => riveInstance.play();
+      canvas.onmouseout = () => riveInstance.reset();
+      canvas.onclick = () => window.history.back();
+    </script>
+  </body>
+</html>

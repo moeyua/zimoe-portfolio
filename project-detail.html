@@ -1,0 +1,38 @@
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Detail</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <header class="header">
+        <div class="secondary-page-title">
+          <canvas
+            id="canvas"
+            style="width: 26px; height: 24px; cursor: pointer"
+          ></canvas>
+          <h1 id="project-title" class="title"></h1>
+        </div>
+        <div class="header-line-long"></div>
+        <div class="header-line-short"></div>
+      </header>
+      <section id="project-gallery" class="masonry"></section>
+      <p id="project-description" class="project-desc"></p>
+    </div>
+    <script src="project-detail.js"></script>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const riveInstance = new rive.Rive({
+        src: "assets/rive/return.riv",
+        canvas,
+        onLoad: () => riveInstance.resizeDrawingSurfaceToCanvas(),
+      });
+      canvas.onmouseenter = () => riveInstance.play();
+      canvas.onmouseout = () => riveInstance.reset();
+      canvas.onclick = () => window.history.back();
+    </script>
+  </body>
+</html>

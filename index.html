@@ -55,34 +55,49 @@
           >
         </section>
         <section class="row2">
-          <div class="card project-card app-project column1">
+          <div
+            class="card project-card app-project column1"
+            data-link="app-project.html"
+          >
             <h1 class="title">App Project</h1>
             <div class="app-project-img">
-              <img
-                src="images/projects/funny-school/乐哉校园1.png"
-                class="project-pic funny-school"
-              />
-              <img
-                src="images/projects/art-pixel/Art Pixel-1.png"
-                class="project-pic art-pixel"
-              />
+              <a
+                href="project-detail.html?id=funny-school"
+                class="funny-school project-pic"
+              >
+                <img
+                  src="images/projects/funny-school/乐哉校园1.png"
+                  class="img"
+                />
+              </a>
+              <a
+                href="project-detail.html?id=art-pixel"
+                class="art-pixel project-pic"
+              >
+                <img
+                  src="images/projects/art-pixel/Art Pixel-1.png"
+                  class="img"
+                />
+              </a>
             </div>
           </div>
           <div class="column2">
-            <div class="card project-card other-project">
-              <h1 class="title">Other Project</h1>
-              <div class="other-project-img">
-                <div class="other-project-more draw-pic"></div>
-                <img
-                  src="images/projects/other/运营插画2.png"
-                  class="project-pic draw-pic draw2"
-                />
-                <img
-                  src="images/projects/other/运营插画3.png"
-                  class="project-pic draw-pic draw3"
-                />
+            <a href="other-project.html" class="card-link">
+              <div class="card project-card other-project">
+                <h1 class="title">Other Project</h1>
+                <div class="other-project-img">
+                  <div class="other-project-more draw-pic"></div>
+                  <img
+                    src="images/projects/other/运营插画2.png"
+                    class="project-pic draw-pic draw2 img"
+                  />
+                  <img
+                    src="images/projects/other/运营插画3.png"
+                    class="project-pic draw-pic draw3 img"
+                  />
+                </div>
               </div>
-            </div>
+            </a>
             <div class="card nothing"></div>
           </div>
           <div class="column3 social-card card">
@@ -197,27 +212,59 @@
           <div class="cat-card card">
             <img src="images/cat.png" alt="a pretty cat" class="cat-img" />
           </div>
-          <div class="web-project project-card card">
+          <div
+            class="web-project project-card card"
+            data-link="web-project.html"
+          >
             <h1 class="title">Web Project</h1>
             <div class="web-project-img">
               <div class="web-project-more"></div>
-              <img
-                src="images/projects/random-password/密码生成器 01.png"
+              <a
+                href="project-detail.html?id=random-password"
                 class="project-pic random-password-pic"
-              />
-              <img
-                src="/images/projects/xhub/智枢 01.png"
+              >
+                <img
+                  src="images/projects/random-password/密码生成器1.png"
+                  class="img"
+                />
+              </a>
+              <a
+                href="project-detail.html?id=xhub"
                 class="project-pic xhub-pic"
-              />
-              <img
-                src="/images/projects/gfm/GFM 01.png"
-                class="project-pic gfm-pic"
-              />
+              >
+                <img src="/images/projects/xhub/智枢1.png" class="img" />
+              </a>
+              <a href="project-detail.html?id=gfm" class="project-pic gfm-pic">
+                <img src="/images/projects/gfm/GFM1.png" class="img" />
+              </a>
             </div>
           </div>
           <div class="nothing2 card"></div>
         </section>
       </div>
+      <footer class="footer">
+        <div class="first-line"></div>
+        <div class="second-line"></div>
+        <div class="third-line"></div>
+      </footer>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".project-card").forEach((card) => {
+          card.addEventListener("click", (e) => {
+            // 如果点的是图片里的链接，就别处理（保留它跳详情页的功能）
+            if (
+              e.target.tagName.toLowerCase() === "img" &&
+              e.target.closest("a")
+            )
+              return;
+
+            // 否则跳转到卡片指定的链接
+            const link = card.getAttribute("data-link");
+            if (link) window.location.href = link;
+          });
+        });
+      });
+    </script>
   </body>
 </html>
