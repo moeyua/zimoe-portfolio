@@ -37,7 +37,7 @@ body {
 }
 .title {
   font-size: 1.5rem;
-  font-weight: medium;
+  font-weight: 600;
   width: 100%;
   margin: 0; /*外边距 容器与容器之间的距离*/
 }
@@ -186,6 +186,7 @@ body {
   flex-direction: column;
   width: 36.75rem;
   gap: 1.5rem;
+  justify-content: space-between;
 }
 .app-project-img {
   justify-content: flex-start;
