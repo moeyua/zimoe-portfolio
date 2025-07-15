@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APP Projects</title>
+    <title>Other Projects</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/@rive-app/canvas"></script>
   </head>
@@ -14,37 +14,61 @@
             id="canvas"
             style="width: 26px; height: 24px; cursor: pointer"
           ></canvas>
-          <h1 class="title">App Project</h1>
+          <h1 class="title">Other Project</h1>
         </div>
         <div class="header-line-long"></div>
         <div class="header-line-short"></div>
       </header>
       <section class="project-grid">
-        <a href="project-detail.html?id=art-pixel" class="jump-to-project">
-          <div class="secondary-page-img">
-            <img
-              src="images/projects/art-pixel/Art Pixel-1.png"
-              class="preview-img"
-              alt="art-pixel"
-            />
-          </div>
-        </a>
-        <a href="project-detail.html?id=funny-school" class="jump-to-project">
-          <div class="secondary-page-img">
-            <img
-              src="images/projects/funny-school/乐哉校园1.png"
-              class="preview-img"
-              alt="funny-school"
-            />
-          </div>
-        </a>
+        <div class="secondary-page-img">
+          <img
+            src="images/projects/other/运营插画1.png"
+            class="preview-img definition"
+            alt="draw1"
+          />
+        </div>
+        <div class="secondary-page-img">
+          <img
+            src="images/projects/other/运营插画2.png"
+            class="preview-img definition"
+            alt="draw2"
+          />
+        </div>
+        <div class="secondary-page-img">
+          <img
+            src="images/projects/other/运营插画3.png"
+            class="preview-img definition"
+            alt="draw3"
+          />
+        </div>
+        <div class="secondary-page-img">
+          <img
+            src="images/projects/other/运营插画4.png"
+            class="preview-img definition"
+            alt="draw4"
+          />
+        </div>
+        <div class="secondary-page-img">
+          <img
+            src="images/projects/other/运营插画5.png"
+            class="preview-img definition"
+            alt="draw5"
+          />
+        </div>
+        <div class="secondary-page-img">
+          <img
+            src="images/projects/other/运营插画6.png"
+            class="preview-img definition"
+            alt="draw6"
+          />
+        </div>
         <div class="image-overlay" id="overlay">
           <img class="enlarged-img" id="enlarged" />
         </div>
       </section>
     </div>
     <script>
-      const images = document.querySelectorAll(".preview-img");
+      const images = document.querySelectorAll(".definition");
       const overlay = document.getElementById("overlay");
       const enlarged = document.getElementById("enlarged");
       images.forEach((img) => {
@@ -63,7 +87,7 @@
     <script>
       const canvas = document.getElementById("canvas");
       const riveInstance = new rive.Rive({
-        src: "assets/rive/return.riv",
+        src: "rive/return.riv",
         canvas,
         onLoad: () => riveInstance.resizeDrawingSurfaceToCanvas(),
       });
